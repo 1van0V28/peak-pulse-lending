@@ -15,6 +15,39 @@ const FEATURES_LIST = [
 ]
 
 
+const setupTitleObserver = function(title) {
+    const titleObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("features_section__title--appearence")
+                titleObserver.unobserve(entry.target)
+            }
+        })
+    }, {threshold: 1})
+
+    titleObserver.observe(title)
+}
+
+
+const setupFeaturesObserver = function(featuresList) {
+    const featuresObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            const animationDelay = index * 1
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("features_section__feature--appearence")
+                }, animationDelay * 1000)
+                featuresObserver.unobserve(entry.target)
+            }
+        })
+    })
+
+    featuresList.forEach((feature) => {
+        featuresObserver.observe(feature)
+    })
+}
+
+
 export function FeaturesSection() {
     const titleRef = useRef(null)
     const featuresRef = useRef([])
@@ -32,29 +65,8 @@ export function FeaturesSection() {
     })
 
     useEffect(() => {
-        const titleObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("features_section__title--appearence")
-                    titleObserver.unobserve(entry.target)
-                }
-            })
-        }, {threshold: 1})
-
-        titleObserver.observe(titleRef.current)
-
-        const featuresObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("features_section__feature--appearence")
-                    featuresObserver.unobserve(entry.target)
-                }
-            })
-        })
-
-        featuresRef.current.forEach((featureRef) => {
-            featuresObserver.observe(featureRef)
-        })
+        setupTitleObserver(titleRef.current)
+        setupFeaturesObserver(featuresRef.current)
     }, [])
 
     return (
