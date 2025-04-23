@@ -6,6 +6,7 @@
 	text-decoration: none;
 	--color_turquoise_dark: #121F26;
 	--color_turquoise: #1A2E35;
+	--color_gunmetal: #1E2F38;
 	--color_orange_dark: #FF3E2D;
 	--color_orange: #FF6F61;
 	--color_pink: #FF9F80;
@@ -34,6 +35,7 @@
 
 body {
 	overflow-x: hidden;
+	cursor: default;
 }
 
 

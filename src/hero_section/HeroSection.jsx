@@ -12,7 +12,7 @@ export function HeroSection() {
     const subtitlesList = SUBTITLES_LIST.map((subtitle, index) => {
         const animationDelay = 2 + 1 * index;  // зависит от --time_animation_fade_in
         return (
-            <span className="hero_section__subtitle_element" style={{animationDelay: `${animationDelay}s`}}>{subtitle}</span>
+            <span key={index + 1} className="hero_section__subtitle_element" style={{animationDelay: `${animationDelay}s`}}>{subtitle}</span>
         )
     })
 
