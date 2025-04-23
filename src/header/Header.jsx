@@ -1,10 +1,15 @@
+import { Logo } from "./header__logo/Logo"
+import { Nav } from "./header__nav/Nav"
+import { ButtonDownload } from "./header__button_download/ButtonDownload"
+import "./header.css"
+
+
 export function Header() {
     return (
-        <header>
-            <a>Преимущества</a>
-            <a>Приложение</a>
-            <a>Отзывы</a>
-            <a>Достижения</a>
+        <header className="header">
+            <Logo/>
+            <Nav/>
+            <ButtonDownload/>
         </header>
     )
 }

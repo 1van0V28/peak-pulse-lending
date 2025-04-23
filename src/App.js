@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import { Header } from "./header/Header"
+import { HeroSection } from "./hero_section/HeroSection"
+import { FeaturesSection } from "./features_section/FeaturesSection"
+import { ScreenshotsSection } from "./screenshots_section/ScreenshotsSection"
+import { TestimonialsSection } from "./testimonials_section/TestimonialsSection"
+import { StatsSection } from "./stats_section/StatsSection"
+import { NewsletterSection } from "./newsletter_section/NewsletterSection"
+import "./App.css"
 
-function App() {
+
+export default function App() {
+	const [navState, setNavState] = useState("")
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
+		<>
+			<Header/>
+			<HeroSection/>
+			<FeaturesSection/>
+			<ScreenshotsSection/>
+			<TestimonialsSection/>
+			<StatsSection/>
+			<NewsletterSection/>
+		</>
+	)
 }
-
-export default App;
