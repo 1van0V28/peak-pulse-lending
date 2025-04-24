@@ -1,0 +1,20 @@
+.stats_section__counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22.5rem;
+}
+
+
+.stats_section__number {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 5rem;
+    color: var(--color_pink);
+}
+
+
+.stats_section__text {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 2rem;
+    color: var(--color_grey);
+}
