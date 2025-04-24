@@ -1,0 +1,38 @@
+.screenshot_section__screenshot,
+.screenshot_section__screenshot--reversed {
+    --size_screenshot_width: 18.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: calc(var(--size_screenshot_width) / 2);
+    row-gap: 3rem;
+    width: 100%;
+}
+
+.screenshot_section__screenshot--reversed {
+    flex-wrap: wrap-reverse;
+}
+
+
+.screenshot_section__text {
+    text-align: center;
+    width: var(--size_screenshot_width);
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 1.5rem;
+    color: var(--color_grey);
+}
+
+
+.screenshot_section__image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(----size_screenshot_width);
+    height: 40.5rem;
+    border: 0.5rem solid var(--color_black);
+    border-radius: 3rem;
+    overflow: hidden;
+    transition: transform ease;
+}

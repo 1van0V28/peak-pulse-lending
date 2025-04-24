@@ -1,0 +1,39 @@
+.section {
+    --size_gap: 3.125rem;
+    padding: var(--size_gap) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: var(--size_gap);
+}
+
+.section--to_light {
+    background-image: linear-gradient(to bottom, var(--color_turquoise_dark), var(--color_turquoise));
+}
+
+.section--to_dark {
+    background-image: linear-gradient(to bottom, var(--color_turquoise), var(--color_turquoise_dark));
+}
+
+
+.section__title {
+    opacity: 0;
+    text-align: center;
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 2.25rem;
+    color: var(--color_grey);
+}
+
+.section__title--appearence {
+    animation: fadeIn_section__title 2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn_section__title {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
