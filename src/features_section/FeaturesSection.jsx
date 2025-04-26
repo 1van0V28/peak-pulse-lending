@@ -1,10 +1,10 @@
 import { useRef, useEffect } from "react"
 import { Section } from "../section/Section"
 import { Feature } from "./features_section__feature/Feature"
-import { MonitorHeartIcon } from "../icons/MonitorHeartIcon"
-import { FootPrintIcon } from "../icons/FootPrintIcon"
-import { FitnessCenterIcon } from "../icons/FitnessCenterIcon"
-import { DeviceWearablesIcon } from "../icons/DeviceWearablesIcon"
+import { MonitorHeartIcon } from "../attachments/icons/MonitorHeartIcon"
+import { FootPrintIcon } from "../attachments/icons/FootPrintIcon"
+import { FitnessCenterIcon } from "../attachments/icons/FitnessCenterIcon"
+import { DeviceWearablesIcon } from "../attachments/icons/DeviceWearablesIcon"
 import "./features_section.css"
 
 
@@ -35,7 +35,7 @@ const setupFeaturesObserver = function(featuresList) {
 }
 
 
-export function FeaturesSection() {
+export function FeaturesSection({onNavChange, navState}) {
     const featuresRef = useRef([])
 
     const featuresList = FEATURES_LIST.map((feature, index) => {
@@ -55,7 +55,12 @@ export function FeaturesSection() {
     }, [])
 
     return (
-        <Section title={"Почему PeakPulse?"} background={"to_dark"}>
+        <Section 
+        title={"Почему PeakPulse?"} 
+        background={"to_dark"}
+        id={"features"}
+        onNavChange={onNavChange}
+        navState={navState}>
             <div className="features_section__features_container">
                 {featuresList}
             </div>

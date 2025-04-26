@@ -3,11 +3,16 @@ import { NewsletterForm } from "./newsletter_section__newsletter_form/Newsletter
 import "./newsletter_section.css"
 
 
-export function NewsletterSection() {
+export function NewsletterSection({onRouterChange, onNavChange, navState}) {
     return (
-        <Section title={"Подпишись на новости"} background={"to_dark"}>
+        <Section 
+        title={"Подпишись на новости"} 
+        id="newsletter" 
+        background={"to_dark"}
+        onNavChange={onNavChange}
+        navState={navState}>
             <h2 className="newsletter_section__subtitle">Получай советы по тренировкам и новости PeakPulse прямо на почту!</h2>
-            <NewsletterForm/>
+            <NewsletterForm onRouterChange={onRouterChange}/>
         </Section>
     )
 }

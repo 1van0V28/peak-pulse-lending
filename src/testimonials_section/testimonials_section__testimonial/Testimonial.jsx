@@ -1,6 +1,6 @@
-import man1 from "../../images/man.jpg"
-import man2 from "../../images/man_2.jpg"
-import woman1 from "../../images/woman.jpg"
+import man1 from "../../attachments/images/man1.jpg"
+import man2 from "../../attachments/images/man2.jpg"
+import woman1 from "../../attachments/images/woman1.jpg"
 import "./testimonials_section__testimonial.css"
 
 

@@ -1,6 +1,6 @@
-import activityMonitorImage from "../../images/activity_monitor2.jpg"
-import monthlyActivityImage from "../../images/monthly_activity2.jpg"
-import profileImage from "../../images/profile2.jpg"
+import activityMonitorImage from "../../attachments/images/activity_monitor.jpg"
+import monthlyActivityImage from "../../attachments/images/monthly_activity.jpg"
+import profileImage from "../../attachments/images/profile.jpg"
 import "./screenshot_section__screenshot.css"
 
 

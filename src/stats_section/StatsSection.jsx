@@ -12,7 +12,7 @@ const COUNTERS_LIST = [
 ]
 
 
-export function StatsSection() {
+export function StatsSection({onNavChange, navState}) {
     const [statsState, setStatsState] = useState(false)
     
     const countersRef = useRef([])
@@ -44,7 +44,12 @@ export function StatsSection() {
     }, [])
 
     return (
-        <Section title={"Пик наших достижений"} background={"to_light"}>
+        <Section 
+        title={"Пик наших достижений"} 
+        background={"to_light"}
+        id={"stats"}
+        onNavChange={onNavChange}
+        navState={navState}>
             <div className="stats_section_counters_container">
                 {countersList}
             </div>

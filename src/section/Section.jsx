@@ -2,12 +2,14 @@ import { useRef, useEffect } from "react"
 import "./section.css"
 
 
-const setupTitleObserver = function(title) {
+const setupTitleObserver = function(title, sectionId, onNavChange, navState) {
     const titleObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("section__title--appearence")
-                titleObserver.unobserve(entry.target)
+                if (sectionId !== navState) {
+                    onNavChange(sectionId)
+                }
             }
         })
     }, {threshold: 1})
@@ -28,15 +30,22 @@ const getSectionStyle = function(background) {
 }
 
 
-export function Section({children, title, background}) {
+export function Section({
+    children,
+    title,
+    background,
+    id,
+    onNavChange,
+    navState
+}) {
     const titleRef = useRef(null)
 
     useEffect(() => {
-        setupTitleObserver(titleRef.current)
+        setupTitleObserver(titleRef.current, id, onNavChange, navState)
     })
 
     return (
-        <section className={getSectionStyle(background)}>
+        <section className={getSectionStyle(background)} id={id}>
             <h1 className="section__title" ref={titleRef}>{title}</h1>
             {children}
         </section>

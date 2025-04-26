@@ -27,7 +27,7 @@ const setupTestimonialsObserver = function(testimonials) {
 }
 
 
-export function TestimonialsSection() {
+export function TestimonialsSection({onNavChange, navState}) {
     const testimonialsRef = useRef([])
 
     const testimonialsList = TESTIMONIALS_LIST.map((testimonial, index) => {
@@ -41,7 +41,12 @@ export function TestimonialsSection() {
     }, [])
 
     return (
-        <Section title={"От тех, кто на Пике"} background={"to_dark"}>
+        <Section 
+        title={"От тех, кто на Пике"} 
+        background={"to_dark"}
+        id={"testimonials"}
+        onNavChange={onNavChange}
+        navState={navState}>
             <div className="testimonials_section__testimonials_container">
                 {testimonialsList}
             </div>

@@ -10,7 +10,7 @@ const SCREENSHOTS_LIST = [
 ]
 
 
-export function ScreenshotsSection() {
+export function ScreenshotsSection({onNavChange, navState}) {
     const imagesRef = useRef([])
 
     const screenshotsList = SCREENSHOTS_LIST.map((screenshot, index) => {
@@ -27,6 +27,8 @@ export function ScreenshotsSection() {
             const windowHeight = window.innerHeight
 
             imagesRef.current.forEach((image) => {
+                if (!image) return
+                
                 const imageRect = image.getBoundingClientRect()
                 const imageCenter = imageRect.top + imageRect.height / 2
                 const viewportCenter = windowHeight / 2
@@ -46,7 +48,12 @@ export function ScreenshotsSection() {
     }, [])
 
     return (
-        <Section title={"PeakPulse, когда ты на Пике"} background={"to_light"}>
+        <Section 
+        title={"PeakPulse, когда ты на Пике"} 
+        background={"to_light"}
+        id={"screenshots"}
+        onNavChange={onNavChange}
+        navState={navState}>
             {screenshotsList}
         </Section>
     )

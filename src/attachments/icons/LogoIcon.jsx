@@ -1,4 +1,4 @@
-import "../header/header__logo/header__logo.css"
+import "../../header/header__logo/header__logo.css"
 
 
 export function LogoIcon({className}) {

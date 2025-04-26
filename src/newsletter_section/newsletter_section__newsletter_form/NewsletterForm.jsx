@@ -23,7 +23,7 @@ const isFulfilled = function(state) {
 }
 
 
-export function NewsletterForm() {
+export function NewsletterForm({onRouterChange}) {
     const [formState, setFormState] = useState({
         email: "",
         name: "",
@@ -40,7 +40,7 @@ export function NewsletterForm() {
     }
 
     return (
-        <form className="newsletter_section__newsletter_form">
+        <form className="newsletter_section__newsletter_form" action={() => {onRouterChange("newsletter")}}>
             <input className={getInputStyle("email", formState)} 
             type="email"
             name="email"
