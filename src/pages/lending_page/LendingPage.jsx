@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Header } from "../../header/Header"
-import { HeroSection } from "../../hero_section/HeroSection"
-import { FeaturesSection } from "../../features_section/FeaturesSection"
-import { ScreenshotsSection } from "../../screenshots_section/ScreenshotsSection"
-import { TestimonialsSection } from "../../testimonials_section/TestimonialsSection"
-import { StatsSection } from "../../stats_section/StatsSection"
-import { NewsletterSection } from "../../newsletter_section/NewsletterSection"
+import { Header } from "../../blocks/header/Header"
+import { HeroSection } from "../../blocks/hero_section/HeroSection"
+import { FeaturesSection } from "../../blocks/features_section/FeaturesSection"
+import { ScreenshotsSection } from "../../blocks/screenshots_section/ScreenshotsSection"
+import { TestimonialsSection } from "../../blocks/testimonials_section/TestimonialsSection"
+import { StatsSection } from "../../blocks/stats_section/StatsSection"
+import { NewsletterSection } from "../../blocks/newsletter_section/NewsletterSection"
 import { Footer } from "../../blocks/footer/Footer"
 
 
@@ -18,8 +18,11 @@ export function LendingPage({onRouterChange}) {
 
     return (
         <>
-            <Header navState={navState} onRouterChange={onRouterChange}/>
-            <HeroSection onNavChange={onNavChange}/>
+            <Header 
+            onRouterChange={onRouterChange}
+            navState={navState} />
+            <HeroSection 
+            onNavChange={onNavChange}/>
             <FeaturesSection 
             onNavChange={onNavChange} 
             navState={navState}/>

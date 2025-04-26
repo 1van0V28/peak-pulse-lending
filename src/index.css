@@ -39,12 +39,7 @@ html {
 	scrollbar-width: thin;
 	scrollbar-color: var(--color_pink) var(--color_gunmetal);
 	cursor: default;
-}
-
-
-body {
 	overflow-x: hidden;
-	cursor: default;
 }
 
 
